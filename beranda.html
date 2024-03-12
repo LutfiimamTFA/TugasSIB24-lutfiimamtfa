@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Examples</title>
+<style>
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        margin: 50px auto;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="box" id="box1"></div>
+
+<script>
+    // Skrip 1: Mengubah warna kotak ketika diklik
+    const box1 = document.getElementById("box1");
+    box1.addEventListener("click", function() {
+        // Menghasilkan warna acak dalam format heksadesimal
+        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        // Mengubah warna latar belakang kotak menjadi warna acak
+        box1.style.backgroundColor = randomColor;
+    });
+</script>
+
+<hr>
+
+<button id="btn">Klik untuk mengubah teks</button>
+<p id="text">Teks awal</p>
+
+<script>
+    // Skrip 2: Mengubah teks saat tombol diklik
+    const btn = document.getElementById("btn");
+    const text = document.getElementById("text");
+    btn.addEventListener("click", function() {
+        // Mengubah teks dalam elemen teks
+        text.textContent = "Teks diubah!";
+    });
+</script>
+
+<hr>
+
+<div id="clock"></div>
+
+<script>
+    // Skrip 3: Menampilkan jam waktu nyata
+    function updateTime() {
+        // Mendapatkan waktu saat ini
+        const now = new Date();
+        // Mendapatkan jam, menit, dan detik dari waktu saat ini
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+        // Menggabungkan jam, menit, dan detik menjadi string waktu
+        const timeString = `${hours}:${minutes}:${seconds}`;
+        // Menetapkan string waktu ke dalam elemen dengan ID "clock"
+        document.getElementById("clock").textContent = timeString;
+    }
+    // Memanggil updateTime setiap detik untuk memperbarui waktu
+    setInterval(updateTime, 1000);
+</script>
+
+<hr>
+
+<button id="toggle">Klik untuk mengganti teks tombol</button>
+
+<script>
+    // Skrip 4: Mengganti teks tombol secara bergantian
+    const toggleBtn = document.getElementById("toggle");
+    let toggleState = false;
+    toggleBtn.addEventListener("click", function() {
+        // Mengubah teks tombol secara bergantian
+        if (toggleState) {
+            toggleBtn.textContent = "Klik untuk mengganti teks tombol";
+        } else {
+            toggleBtn.textContent = "Teks tombol telah diganti!";
+        }
+        toggleState = !toggleState; // Mengubah keadaan tombol
+    });
+</script>
+
+<hr>
+
+<input type="text" id="input" placeholder="Masukkan teks di sini">
+
+<script>
+    // Skrip 5: Menampilkan teks dari input
+    const inputField = document.getElementById("input");
+    inputField.addEventListener("input", function() {
+        // Menampilkan teks yang dimasukkan di bawah input
+        const textOutput = document.createElement("p");
+        textOutput.textContent = "Teks yang dimasukkan: " + inputField.value;
+        document.body.appendChild(textOutput);
+    });
+</script>
+
+</body>
+</html>
