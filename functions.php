@@ -25,6 +25,8 @@ echo <<<EOT
     <nav class="navtop">
     	<div>
             <a href="landingdom.html"><i class="fas fa-home"></i>Home</a>
+			
+
     	</div>
     </nav>
 EOT;

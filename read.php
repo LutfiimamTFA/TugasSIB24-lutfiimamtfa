@@ -20,11 +20,12 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM kontak')->fetchColumn();
 ?>
 
 
-<?=template_header('Read')?>
+<<?=template_header('Read')?>
 
 <div class="content read">
     <h2>Daftar Kontak</h2>
     <a href="create.php" class="create-contact">Tambah Kontak</a>
+    <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a> <!-- Tambahkan ini untuk ikon logout -->
     <table>
         <thead>
             <tr>
