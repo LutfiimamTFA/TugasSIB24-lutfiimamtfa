@@ -29,7 +29,7 @@ $num_contacts = $pdo->query('SELECT COUNT(*) FROM kontak')->fetchColumn();
     <table>
         <thead>
             <tr>
-                <th>#</th>
+                <th>id</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>No. Telp</th>
